@@ -9,8 +9,8 @@ const Home = () => {
         <div>
             <Header />
 
-            <CompletedTask />
             <ToDo />
+            <CompletedTask />
             <Calender />
         </div>
     );

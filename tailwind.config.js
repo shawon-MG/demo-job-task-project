@@ -9,7 +9,7 @@ module.exports = {
       {
         taskTheme: {
           primary: "yellow",
-          secondary: "#f6d860",
+          secondary: "orange",
           accent: "#37cdbe",
           neutral: "#3d4451",
           "base-100": "#ffffff",

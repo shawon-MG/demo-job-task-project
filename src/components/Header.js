@@ -27,7 +27,8 @@ const Header = () => {
                         {menuItems}
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-primary normal-case text-2xl font-serif "> Task Tracking App </Link>
+                <Link to='/' className="btn btn-primary bg-gradient-to-r from-orange-400 to-yellow-500 hover:from-green-500 hover:to-blue-500 normal-case text-2xl font-serif "> Task Tracking App </Link>
+
             </div>
 
             <div className="navbar-center hidden lg:flex">
@@ -42,3 +43,6 @@ const Header = () => {
 };
 
 export default Header;
+
+
+// bg-gradient-to-r from-secondary to-primary
