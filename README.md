@@ -1,3 +1,3 @@
 # Task Tracking App
 
-This project was bootstrapped with [Create React App](https://track-tasks-made-easy.netlify.app/#calender).
+Task Tracking App [Task Tracking Site](https://track-tasks-made-easy.netlify.app/#calender).
