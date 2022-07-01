@@ -28,7 +28,9 @@ const ToDo = () => {
         fetch('http://localhost:5000/task')
             .then(res => res.json())
             .then(data => setTasks(data))
-    }, [])
+    }, []);
+
+
     return (
         <div id="to-do" className='text-center'>
 
@@ -53,12 +55,21 @@ const ToDo = () => {
 
                                         <p className='font-bold'> {task.taskItem} </p>
 
-                                        <button class="btn btn-xs btn-primary bg-gradient-to-r from-orange-400 to-yellow-500 hover:from-green-500 hover:to-blue-500"> <span className='text-bold'> Edit Task </span> </button>
+                                        <button class="btn btn-sm btn-primary bg-gradient-to-r from-orange-400 to-yellow-500 hover:from-green-500 hover:to-blue-500"> <span className='font-bold'> Edit Task </span> </button>
+
+                                        <div class="form-control">
+                                            <label className="label cursor-pointer">
+                                                <span className="label-text font-bold"> Task Completed? </span>
+                                                <input type="checkbox" class="checkbox ml-2" />
+                                            </label>
+                                        </div>
+
 
                                     </div>
                                 </div>
                             </div>)
                         }
+
                     </div>
                 </div>
             </div>
