@@ -29,14 +29,13 @@ const EditTaskModal = ({ updateTask }) => {
             <input type="checkbox" id="my-modal-4" class="modal-toggle" />
             <label for="my-modal-4" class="modal cursor-pointer ">
                 <label class="modal-box relative  w-11/12 max-w-5xl" for="">
-                    <h3 class="text-lg font-bold">{updateTask._id}</h3>
-                    <p class="py-4">{updateTask.taskItem}</p>
+                    <h3 class="text-lg font-bold"> Current Task: {updateTask.taskItem}</h3>
 
                     <form onSubmit={handleUpdatedTask} className='flex flex-col shadow-2xl w-52 lg:w-1/2 p-6 rounded-lg m-auto mt-5 border'>
 
                         <input type="text" name='task' required placeholder="Write your task here" className="input input-bordered w-auto text-lg" />
                         <p className='font-bold mt-1'> Press The Button or, Press Enter on Keyboard </p>
-                        <input className="btn btn-secondary bg-gradient-to-r from-orange-400 to-yellow-500 mt-2 text-lg font-serif" type="submit" value="Add Task" />
+                        <input className="btn btn-secondary bg-gradient-to-r from-orange-400 to-yellow-500 mt-2 text-lg font-serif" type="submit" value="Confirm?" />
 
                     </form>
                 </label>

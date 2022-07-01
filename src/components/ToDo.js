@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+// import CompletedTask from './CompletedTask';
 import EditTaskModal from './EditTaskModal';
 
 const ToDo = () => {
@@ -18,7 +19,7 @@ const ToDo = () => {
         })
             .then(res => res.json())
             .then(result => {
-                console.log(result);
+                // console.log(result);
                 alert('Task added successfully');
                 e.target.reset();
             });
@@ -32,6 +33,27 @@ const ToDo = () => {
     }, []);
 
     const [updateTask, setUpdateTask] = useState([]);
+
+
+    // const [doneTask, setDoneTask] = useState({});
+    // console.log(doneTask);
+    const handleCompletedTask = (id) => {
+        // console.log('clicked');
+
+        fetch(`http://localhost:5000/task/done/${id}`, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                // setDoneTask(data);
+                alert('Task completed successfully');
+                // toast.success('Successfully made an admin!')
+            });
+    }
 
 
     return (
@@ -48,7 +70,7 @@ const ToDo = () => {
             <div className='flex  shadow-2xl rounded-lg justify-center w-5/6 pb-8 ml-32' >
                 <div className='flex-col  mt-4'>
 
-                    <h1 className=' mt-2 p-2 text-4xl rounded-lg font-serif  '> Your Tasks List </h1>
+                    <h1 className=' mt-2 p-2 text-4xl rounded-lg font-serif'> Your Tasks List </h1>
 
                     <div className='grid grid-cols-1 gap-1'>
                         {
@@ -58,9 +80,11 @@ const ToDo = () => {
 
                                         <p className='font-bold'> {task.taskItem} </p>
 
-                                        {/* <button class="btn btn-sm btn-primary bg-gradient-to-r from-orange-400 to-yellow-500 hover:from-green-500 hover:to-blue-500"> <span className='font-bold'> Edit Task </span> </button> */}
-
-                                        <label onClick={() => setUpdateTask(task)} for="my-modal-4" class="btn modal-button">open modal</label>
+                                        <label
+                                            onClick={() => setUpdateTask(task)}
+                                            for="my-modal-4"
+                                            class="btn modal-button btn-sm btn-primary bg-gradient-to-r from-orange-400 to-yellow-500 hover:from-green-500 hover:to-blue-500"> Edit Task
+                                        </label>
 
                                         <div class="form-control">
                                             <label className="label cursor-pointer">
@@ -68,6 +92,8 @@ const ToDo = () => {
                                                 <input type="checkbox" class="checkbox ml-2" />
                                             </label>
                                         </div>
+
+                                        <button onClick={() => handleCompletedTask(task._id)} class="btn btn-xs">Tiny</button>
                                     </div>
                                 </div>
                             </div>)
@@ -77,15 +103,15 @@ const ToDo = () => {
                     {
                         updateTask && <EditTaskModal updateTask={updateTask}></EditTaskModal>
                     }
+
+                    {/* {
+                        doneTask && <CompletedTask doneTask={doneTask} ></CompletedTask>
+                    } */}
+
                 </div>
             </div>
-
-
         </div >
-
     );
 };
 
 export default ToDo;
-
-// bg-gradient-to-r from-primary to-secondary hover:from-secondary hover:to-primary
