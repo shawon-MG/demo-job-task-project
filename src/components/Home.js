@@ -1,6 +1,7 @@
 import React from 'react';
 import Calender from './Calender';
 import CompletedTask from './CompletedTask';
+import Footer from './Footer';
 import Header from './Header';
 import ToDo from './ToDo';
 
@@ -12,6 +13,8 @@ const Home = () => {
             <ToDo />
             <CompletedTask />
             <Calender />
+
+            <Footer />
         </div>
     );
 };

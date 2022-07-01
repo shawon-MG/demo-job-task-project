@@ -51,7 +51,6 @@ const ToDo = () => {
                 console.log(data);
                 // setDoneTask(data);
                 alert('Task completed successfully');
-                // toast.success('Successfully made an admin!')
             });
     }
 
@@ -89,11 +88,10 @@ const ToDo = () => {
                                         <div class="form-control">
                                             <label className="label cursor-pointer">
                                                 <span className="label-text font-bold"> Task Completed? </span>
-                                                <input type="checkbox" class="checkbox ml-2" />
+                                                <button onClick={() => handleCompletedTask(task._id)} class="btn btn-xs checkbox ml-2"> X </button>
                                             </label>
                                         </div>
 
-                                        <button onClick={() => handleCompletedTask(task._id)} class="btn btn-xs">Tiny</button>
                                     </div>
                                 </div>
                             </div>)
