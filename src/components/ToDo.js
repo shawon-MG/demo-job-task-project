@@ -34,7 +34,7 @@ const ToDo = () => {
 
             <form onSubmit={handleAddTask} className='flex flex-col shadow-2xl w-52 lg:w-1/2 p-6 rounded-lg m-auto mt-5 border'>
 
-                <textarea type="text" name='task' required placeholder="Write your task here" className="input input-bordered w-auto text-lg" />
+                <input type="text" name='task' required placeholder="Write your task here" className="input input-bordered w-auto text-lg" />
                 <p className='font-bold mt-1'> Press The Button or, Press Enter on Keyboard </p>
                 <input className="btn btn-secondary bg-gradient-to-r from-orange-400 to-yellow-500 mt-2 text-lg font-serif" type="submit" value="Add Task" />
 
