@@ -10,7 +10,7 @@ const ToDo = () => {
 
         const task = { taskItem };
 
-        fetch('http://localhost:5000/task', {
+        fetch('https://lit-lake-51780.herokuapp.com/task', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -27,7 +27,7 @@ const ToDo = () => {
 
     const [tasks, setTasks] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/task')
+        fetch('https://lit-lake-51780.herokuapp.com/task')
             .then(res => res.json())
             .then(data => setTasks(data))
     }, []);
@@ -40,7 +40,7 @@ const ToDo = () => {
     const handleCompletedTask = (id) => {
         // console.log('clicked');
 
-        fetch(`http://localhost:5000/task/done/${id}`, {
+        fetch(`https://lit-lake-51780.herokuapp.com/task/done/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json'

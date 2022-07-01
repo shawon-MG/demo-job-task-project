@@ -10,7 +10,7 @@ const EditTaskModal = ({ updateTask }) => {
 
         const updatedTask = { taskItem };
 
-        fetch(`http://localhost:5000/task/${updateTask._id}`, {
+        fetch(`https://lit-lake-51780.herokuapp.com/task/${updateTask._id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
