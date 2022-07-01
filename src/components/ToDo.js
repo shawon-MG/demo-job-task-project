@@ -68,8 +68,6 @@ const ToDo = () => {
                                                 <input type="checkbox" class="checkbox ml-2" />
                                             </label>
                                         </div>
-
-
                                     </div>
                                 </div>
                             </div>)
