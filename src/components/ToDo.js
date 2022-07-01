@@ -66,7 +66,7 @@ const ToDo = () => {
 
             </form>
 
-            <div className='flex  shadow-2xl rounded-lg justify-center w-5/6 pb-8 ml-32' >
+            <div className='flex  shadow-2xl rounded-lg justify-center w-5/6 pb-8 ml-32 mt-12' >
                 <div className='flex-col  mt-4'>
 
                     <h1 className=' mt-2 p-2 text-4xl rounded-lg font-serif'> Your Tasks List </h1>

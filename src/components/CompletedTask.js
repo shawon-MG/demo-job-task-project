@@ -1,14 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const CompletedTask = () => {
+    const [completes, setCompletes] = useState([]);
+
+    useEffect(() => {
+        const role = "done";
+        const url = `https://lit-lake-51780.herokuapp.com/complete-task?role=${role}`
+        fetch(url)
+            .then(res => res.json())
+            .then(data => setCompletes(data)
+            )
+    }, []);
 
 
     return (
-        <div id="completed-task" className='text-center mt-12'>
-            <div class="mockup-window border bg-base-300 w-1/2 mx-auto mt-8">
-                <div class=" grid grid-cols-1 justify-center items-center px-2 py-8 bg-base-200">
-                    <h1 className='text-2xl font-bold py-4 text-center'>All of the completed task lists will be  <span className=' bg-red-600 font-bold text-white p-2 rounded-xl'>Coming Soon </span></h1>
-                </div>
+
+        <div>
+            <h1 className=' mt-12 p-2 text-4xl text-center rounded-lg font-serif'> Your Completed Tasks </h1>
+            <div className='grid grid-cols-1 gap-1 '>
+                {
+                    completes.map(complete => <div class="card w-auto bg-base-100 shadow-xl">
+                        <div class="card-body">
+                            <div class="card-actions justify-end">
+
+                                <p className='font-bold'> {complete.taskItem} </p>
+
+                            </div>
+                        </div>
+                    </div>)
+                }
             </div>
         </div>
     );
