@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import EditTaskModal from './EditTaskModal';
 
 const ToDo = () => {
     const handleAddTask = e => {
@@ -30,6 +31,8 @@ const ToDo = () => {
             .then(data => setTasks(data))
     }, []);
 
+    const [updateTask, setUpdateTask] = useState([]);
+
 
     return (
         <div id="to-do" className='text-center'>
@@ -55,7 +58,9 @@ const ToDo = () => {
 
                                         <p className='font-bold'> {task.taskItem} </p>
 
-                                        <button class="btn btn-sm btn-primary bg-gradient-to-r from-orange-400 to-yellow-500 hover:from-green-500 hover:to-blue-500"> <span className='font-bold'> Edit Task </span> </button>
+                                        {/* <button class="btn btn-sm btn-primary bg-gradient-to-r from-orange-400 to-yellow-500 hover:from-green-500 hover:to-blue-500"> <span className='font-bold'> Edit Task </span> </button> */}
+
+                                        <label onClick={() => setUpdateTask(task)} for="my-modal-4" class="btn modal-button">open modal</label>
 
                                         <div class="form-control">
                                             <label className="label cursor-pointer">
@@ -69,8 +74,11 @@ const ToDo = () => {
                                 </div>
                             </div>)
                         }
-
                     </div>
+
+                    {
+                        updateTask && <EditTaskModal updateTask={updateTask}></EditTaskModal>
+                    }
                 </div>
             </div>
 
